@@ -48,11 +48,17 @@ body {
 
 .rating,
 .thanks {
+	position: relative;
 	padding: 2.5rem;
 	color: hsl(var(--white));
 	background-color: hsl(var(--dark-secondary));
 	border-radius: 2rem;
 	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+	position: relative;
+	overflow: hidden;
 }
 
 .star svg {
@@ -152,4 +158,25 @@ p {
 
 .thanks p:last-child {
 	margin-bottom: 0.5em;
+}
+
+.erorr {
+	position: absolute;
+	right: 0rem;
+	top: 0;
+	z-index: 99;
+	background-color: transparent;
+	padding: 1rem 2rem;
+	color: hsla(0, 100%, 50%, 0.925);
+	border-radius: 3rem;
+	border: 2px solid hsla(0, 100%, 50%, 0.925);
+	cursor: pointer;
+	transform: translateX(100%);
+	opacity: 0;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.erorr.open {
+	transform: translateX(0);
+	opacity: 1;
 }
