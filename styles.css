@@ -1,0 +1,155 @@
+/* -01- Reset */
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* -02- custom properties */
+:root {
+	/* colors */
+	--accent: 25, 97%, 53%;
+
+	--white: 0, 0%, 100%;
+	--light-color: 217, 12%, 63%;
+	--medium-color: 216, 12%, 54%;
+	--dark-secondary: 213, 19%, 18%;
+	--darker-secondary: 216, 12%, 8%;
+}
+
+/* -03- Body setup */
+
+body {
+	font-family: 'Overpass', sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(var(--darker-secondary));
+}
+
+/* -04- components */
+.container {
+	max-width: 400px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.rating,
+.thanks {
+	padding: 2.5rem;
+	color: hsl(var(--white));
+	background-color: hsl(var(--dark-secondary));
+	border-radius: 2rem;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.star svg {
+	padding: 0.8em;
+	box-sizing: content-box;
+	background-color: hsla(var(--medium-color), 0.1);
+	border-radius: 50%;
+}
+
+.title {
+	margin: 0.8em 0 0.3em;
+}
+
+p {
+	color: hsla(var(--light-color), 1);
+	margin-bottom: 2.2rem;
+}
+
+.rating-form input[type='radio'] {
+	display: none;
+}
+.rating-buttons-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.rating-form label {
+	display: block;
+	background-color: hsla(var(--light-color), 0.1);
+	width: 2.8em;
+	height: 2.8em;
+	text-align: center;
+	line-height: 2.8em;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.rating-form input:checked + label {
+	background-color: hsla(var(--light-color), 0.8);
+}
+
+.rating-form label:hover,
+.rating-form label:focus {
+	background-color: hsla(var(--accent), 1);
+}
+
+.rating-form button[type='submit'] {
+	width: 100%;
+	background-color: hsl(var(--accent));
+	color: hsl(var(--white));
+	text-transform: uppercase;
+	padding: 0.9em;
+	font-weight: 700;
+	letter-spacing: 1px;
+	border-radius: 100px;
+	border: none;
+	margin-top: 2.5rem;
+	cursor: pointer;
+
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.rating-form button[type='submit']:hover,
+.rating-form button[type='submit']:focus {
+	background-color: hsl(var(--white));
+	color: hsl(var(--accent));
+}
+@media (min-width: 25em) {
+	.rating,
+	.thanks {
+		padding: 3.3rem;
+	}
+
+	.rating-form label {
+		width: 3em;
+		height: 3em;
+		line-height: 3em;
+	}
+}
+.thanks {
+	text-align: center;
+}
+
+.thanks .illustration {
+	max-width: max-content;
+	margin: 0 auto;
+}
+
+.thanks .rating-info {
+	max-width: max-content;
+	margin: 2rem auto 0;
+	padding: 0.3em 0.7em;
+	background-color: hsla(var(--light-color), 0.1);
+	border-radius: 100px;
+	color: hsl(var(--accent));
+}
+
+.thanks p:last-child {
+	margin-bottom: 0.5em;
+}
